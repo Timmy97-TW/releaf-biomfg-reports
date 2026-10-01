@@ -1,0 +1,81 @@
+/* Chart + diagram tokens. Series colours are the validated 3-slot set,
+   stepped separately for the dark surface. */
+.viz {
+  --s1: #2a78d6;      /* slot 1 blue */
+  --s2: #eb6834;      /* slot 2 orange */
+  --s3: #1baf7a;      /* slot 3 aqua */
+  --pos: #2a78d6;     /* diverging, favourable arm */
+  --neg: #e34948;     /* diverging, unfavourable arm */
+  --neutral: #cfcfd6; /* the "rest of it" fill */
+  --grid: #e3e3e8;
+  --axis: #b9b9c0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .viz {
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+    --pos: #3987e5; --neg: #e66767;
+    --neutral: #3c3c42; --grid: #2d2d33; --axis: #55555d;
+  }
+  :root:not([data-theme="light"]) svg.chart .host { fill-opacity: .85; }
+}
+
+figure.fig { margin: 0 0 28px; }
+figure.fig .frame {
+  background: var(--card); border: 1px solid var(--line-soft);
+  border-radius: 14px; padding: 22px 20px 16px;
+}
+section:not(.alt) figure.fig .frame { background: var(--bg-alt); border-color: transparent; }
+figure.fig figcaption { font-size: 13px; line-height: 1.45; color: var(--text-2); margin-top: 10px; }
+figure.fig figcaption b { color: var(--text); font-weight: 600; }
+.fig-title { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
+.fig-sub { font-size: 13px; color: var(--text-2); margin: 0 0 14px; }
+
+svg.chart { width: 100%; height: auto; display: block; overflow: visible; }
+svg.chart text { font-family: var(--font); fill: var(--text-2); }
+svg.chart .lbl { font-size: 12px; }
+svg.chart .lbl-s { font-size: 11px; }
+svg.chart .val { font-size: 13px; font-weight: 600; fill: var(--text); font-variant-numeric: tabular-nums; }
+svg.chart .cat { font-size: 13px; fill: var(--text); }
+svg.chart .grid { stroke: var(--grid); stroke-width: 1; }
+svg.chart .axis { stroke: var(--axis); stroke-width: 1; }
+svg.chart .ink { fill: var(--text); }
+svg.chart [data-tip] { cursor: default; }
+svg.chart .host { fill: var(--s2); fill-opacity: .5; }
+
+/* legend */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--text-2); margin: 14px 0 0; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; flex: none; }
+
+/* diagram primitives */
+svg.chart .box { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+section:not(.alt) svg.chart .box { fill: var(--bg); }
+svg.chart .box-t { font-size: 13px; font-weight: 600; fill: var(--text); }
+svg.chart .box-s { font-size: 11px; fill: var(--text-2); }
+svg.chart .flow { stroke: var(--axis); stroke-width: 1.5; fill: none; }
+svg.chart .note-l { stroke: var(--axis); stroke-width: 1; stroke-dasharray: 3 3; }
+
+/* tooltip */
+#viztip {
+  position: fixed; z-index: 90; pointer-events: none; opacity: 0;
+  transition: opacity .12s ease; max-width: 260px;
+  background: var(--text); color: var(--bg);
+  font-size: 12.5px; line-height: 1.4; padding: 7px 10px; border-radius: 9px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+#viztip.on { opacity: 1; }
+#viztip b { font-weight: 600; }
+
+/* data table toggle under a chart */
+.fig-table { margin-top: 12px; }
+.fig-table summary { font-size: 13px; color: var(--link); cursor: pointer; }
+.fig-table summary::marker { color: var(--text-3); }
+.fig-table table { margin-top: 10px; font-size: 13px; }
+.fig-table .tbl-wrap { border-color: var(--line-soft); }
+
+/* On a narrow screen the charts keep a readable size and the frame pans. */
+@media (max-width: 760px) {
+  figure.fig .frame { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  figure.fig svg.chart { min-width: 600px; }
+  figure.fig .legend { min-width: 600px; }
+}

@@ -7,6 +7,7 @@
 <meta name="description" content="Case 2: Impossible Foods' soy leghemoglobin, read as a product specification and a biosafety and regulatory dossier.">
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/viz.css">
 </head>
 <body>
 <nav class="gnav"><div class="gnav-in">
@@ -52,6 +53,51 @@
 </div></section>
 
 <section class="alt"><div class="wrap">
+  <figure class="fig viz">
+<div class="frame">
+<p class="fig-title">Figure 1 · Why the host proteins were the problem</p>
+<p class="fig-sub">The route from fermenter to ingredient, with the step that creates the whole regulatory question marked.</p>
+<svg class="chart" viewBox="0 0 760 250" role="img" aria-labelledby="f4t">
+<title id="f4t">Impossible Foods process: fermentation, bead mill, centrifuge and microfiltration, ultrafiltration, then the frozen leghemoglobin preparation.</title>
+<rect class="box" x="10" y="40" width="128" height="86" rx="12"/>
+<text class="box-t" x="74.0" y="66" text-anchor="middle">Fed-batch</text>
+<text class="box-t" x="74.0" y="82" text-anchor="middle">fermentation</text>
+<text class="box-s" x="74.0" y="144" text-anchor="middle">yeast grown on glycerol,</text>
+<text class="box-s" x="74.0" y="158" text-anchor="middle">then induced with methanol</text>
+<path class="flow" d="M142 83 L153 83"/>
+<path d="M152 79 l6 4 -6 4z" fill="var(--axis)"/>
+<rect class="box" x="162" y="40" width="128" height="86" rx="12" fill="var(--s1)" fill-opacity=".10" stroke="var(--s1)" stroke-width="2"/>
+<text class="box-t" x="226.0" y="66" text-anchor="middle">Bead mill</text>
+<text class="box-s" x="226.0" y="144" text-anchor="middle">cells broken open —</text>
+<text class="box-s" x="226.0" y="158" text-anchor="middle">everything inside comes out</text>
+<path class="flow" d="M294 83 L305 83"/>
+<path d="M304 79 l6 4 -6 4z" fill="var(--axis)"/>
+<rect class="box" x="314" y="40" width="128" height="86" rx="12"/>
+<text class="box-t" x="378.0" y="66" text-anchor="middle">Centrifuge +</text>
+<text class="box-t" x="378.0" y="82" text-anchor="middle">microfiltration</text>
+<text class="box-s" x="378.0" y="144" text-anchor="middle">cells and insoluble</text>
+<text class="box-s" x="378.0" y="158" text-anchor="middle">material removed</text>
+<path class="flow" d="M446 83 L457 83"/>
+<path d="M456 79 l6 4 -6 4z" fill="var(--axis)"/>
+<rect class="box" x="466" y="40" width="128" height="86" rx="12"/>
+<text class="box-t" x="530.0" y="66" text-anchor="middle">Ultrafiltration</text>
+<text class="box-s" x="530.0" y="144" text-anchor="middle">protein concentrated,</text>
+<text class="box-s" x="530.0" y="158" text-anchor="middle">salt and ascorbate added</text>
+<path class="flow" d="M598 83 L609 83"/>
+<path d="M608 79 l6 4 -6 4z" fill="var(--axis)"/>
+<rect class="box" x="618" y="40" width="128" height="86" rx="12"/>
+<text class="box-t" x="682.0" y="66" text-anchor="middle">LegH Prep</text>
+<text class="box-s" x="682.0" y="144" text-anchor="middle">frozen liquid,</text>
+<text class="box-s" x="682.0" y="158" text-anchor="middle">6–9% leghemoglobin</text>
+<text class="lbl-s" x="10" y="26">The protein is made inside the cell, so getting it out means destroying the cell.</text>
+<rect x="156" y="186" width="276" height="46" rx="10" fill="var(--s1)" fill-opacity=".10"/>
+<text class="box-s" x="170" y="206" fill="var(--text)">This step is why host proteins stay in the product</text>
+<text class="box-s" x="170" y="222">and why the first FDA filing stalled.</text>
+<path class="note-l" d="M206 186 L206 130"/>
+</svg>
+</div>
+<figcaption>Leghemoglobin accumulates inside the yeast, so the cells have to be broken to release it. Everything else inside them comes out at the same time, which is why the specification needs a purity floor and why the first filing stalled. <b>ReLeaf is the other case</b>: our enzyme is secreted and crosses a membrane, so the cells are never opened.</figcaption>
+</figure>
   <h2>Report 04: the specification</h2>
   <p class="sub">An excerpt of Table 1 in GRN 737. Each row has four parts: what is measured, the limit, how it was measured, and what five real lots gave. This is the layout to copy.</p>
   <div class="tbl-wrap"><table>
@@ -70,6 +116,48 @@
   </table></div>
   <p class="tiny" style="margin-top:12px">Values read from the scanned GRN 737 notice (pp. 8–9) and checked against FDA's response letter, which confirms the 6–9%, ≥65% and lead limits. A dash means our reading of the notice found no method named on that row; check the scanned page before quoting. The release rule underneath the table: any lot that fails any line is discarded and the cause is investigated.</p>
 
+  <figure class="fig viz">
+<div class="frame">
+<p class="fig-title">Figure 2 · Five lots against one specification</p>
+<p class="fig-sub">A specification is only believable with real batch results beside it. This is the layout to copy.</p>
+<svg class="chart" viewBox="0 0 760 258" role="img" aria-labelledby="f5t">
+<title id="f5t">Leghemoglobin made up 71 to 86 percent of total protein across five lots, against a specification of at least 65 percent.</title>
+<rect x="118" y="34" width="364.0" height="196" fill="var(--text-2)" opacity=".06"/>
+<line x1="482.0" y1="30" x2="482.0" y2="230" stroke="var(--text)" stroke-width="2" stroke-dasharray="5 4"/>
+<text class="lbl-s" x="490.0" y="24" fill="var(--text)">specification ≥65%</text>
+<text class="lbl" x="106" y="62" text-anchor="end">Lot 1</text>
+<rect x="118" y="44" width="397.6" height="26" rx="4" fill="var(--s1)" tabindex="0" data-tip="<b>Lot 1: 71%</b> leghemoglobin of total protein<br>specification ≥65% · SDS-PAGE densitometry"/>
+<rect x="517.6" y="44" width="160.4" height="26" rx="4" class="host" data-tip="<b>29%</b> residual host protein from the yeast"/>
+<text class="val" x="505.6" y="62" text-anchor="end" fill="#fff">71%</text>
+<text class="lbl" x="106" y="98" text-anchor="end">Lot 2</text>
+<rect x="118" y="80" width="431.2" height="26" rx="4" fill="var(--s1)" tabindex="0" data-tip="<b>Lot 2: 77%</b> leghemoglobin of total protein<br>specification ≥65% · SDS-PAGE densitometry"/>
+<rect x="551.2" y="80" width="126.8" height="26" rx="4" class="host" data-tip="<b>23%</b> residual host protein from the yeast"/>
+<text class="val" x="539.2" y="98" text-anchor="end" fill="#fff">77%</text>
+<text class="lbl" x="106" y="134" text-anchor="end">Lot 3</text>
+<rect x="118" y="116" width="459.2" height="26" rx="4" fill="var(--s1)" tabindex="0" data-tip="<b>Lot 3: 82%</b> leghemoglobin of total protein<br>specification ≥65% · SDS-PAGE densitometry"/>
+<rect x="579.2" y="116" width="98.8" height="26" rx="4" class="host" data-tip="<b>18%</b> residual host protein from the yeast"/>
+<text class="val" x="567.2" y="134" text-anchor="end" fill="#fff">82%</text>
+<text class="lbl" x="106" y="170" text-anchor="end">Lot 4</text>
+<rect x="118" y="152" width="476.0" height="26" rx="4" fill="var(--s1)" tabindex="0" data-tip="<b>Lot 4: 85%</b> leghemoglobin of total protein<br>specification ≥65% · SDS-PAGE densitometry"/>
+<rect x="596.0" y="152" width="82.0" height="26" rx="4" class="host" data-tip="<b>15%</b> residual host protein from the yeast"/>
+<text class="val" x="584.0" y="170" text-anchor="end" fill="#fff">85%</text>
+<text class="lbl" x="106" y="206" text-anchor="end">Lot 5</text>
+<rect x="118" y="188" width="481.6" height="26" rx="4" fill="var(--s1)" tabindex="0" data-tip="<b>Lot 5: 86%</b> leghemoglobin of total protein<br>specification ≥65% · SDS-PAGE densitometry"/>
+<rect x="601.6" y="188" width="76.4" height="26" rx="4" class="host" data-tip="<b>14%</b> residual host protein from the yeast"/>
+<text class="val" x="589.6" y="206" text-anchor="end" fill="#fff">86%</text>
+<line class="axis" x1="118" y1="230" x2="678" y2="230"/>
+<text class="lbl-s" x="118.0" y="248" text-anchor="middle">0%</text>
+<text class="lbl-s" x="258.0" y="248" text-anchor="middle">25%</text>
+<text class="lbl-s" x="398.0" y="248" text-anchor="middle">50%</text>
+<text class="lbl-s" x="482.0" y="248" text-anchor="middle">65%</text>
+<text class="lbl-s" x="538.0" y="248" text-anchor="middle">75%</text>
+<text class="lbl-s" x="678.0" y="248" text-anchor="middle">100%</text>
+</svg>
+<p class="legend"><span><i style="background:var(--s1)"></i>Leghemoglobin</span><span><i style="background:var(--s2);opacity:.75"></i>Residual host protein</span></p>
+</div>
+<figcaption>Leghemoglobin as a share of total protein in five independent production lots, measured by SDS-PAGE with densitometry. Every lot clears the ≥65% floor with room to spare. The orange remainder is residual yeast protein, stated rather than hidden.</figcaption>
+<details class="fig-table"><summary>Show the numbers</summary><div class="tbl-wrap"><table><thead><tr><th>Lot</th><th>Leghemoglobin, % of total protein</th><th>Specification</th></tr></thead><tbody><tr><td>Lot 1</td><td class="n">71%</td><td class="n">≥65%</td></tr><tr><td>Lot 2</td><td class="n">77%</td><td class="n">≥65%</td></tr><tr><td>Lot 3</td><td class="n">82%</td><td class="n">≥65%</td></tr><tr><td>Lot 4</td><td class="n">85%</td><td class="n">≥65%</td></tr><tr><td>Lot 5</td><td class="n">86%</td><td class="n">≥65%</td></tr></tbody></table></div></details>
+</figure>
   <h3 style="margin-top:48px">How to write it</h3>
   <div class="grid g2" style="margin-top:16px">
     <div>
@@ -94,6 +182,43 @@
   </div>
   <p class="tiny" style="margin-top:12px">From GRN 737 Tables 2–3 and Fraser et al. 2018. A later 90-day study (Reyes et al. 2023) found no adverse effect at the highest dose either. The 2019 colour additive petition used newer intake data with higher numbers; do not mix the two sets.</p>
 
+  <figure class="fig viz">
+<div class="frame">
+<p class="fig-title">Figure 3 · The safety argument in one line</p>
+<p class="fig-sub">Three numbers on a log scale. Anyone can redo the arithmetic from the notice, which is why it persuades.</p>
+<svg class="chart" viewBox="0 0 760 232" role="img" aria-labelledby="f6t">
+<title id="f6t">On a logarithmic scale, estimated intake is 6.67, the allowed daily intake 7.5, and the no-adverse-effect dose in rats 750 milligrams per kilogram per day.</title>
+<line class="grid" x1="120.0" y1="60" x2="120.0" y2="150"/>
+<text class="lbl-s" x="120.0" y="168" text-anchor="middle">1</text>
+<line class="grid" x1="313.3" y1="60" x2="313.3" y2="150"/>
+<text class="lbl-s" x="313.3" y="168" text-anchor="middle">10</text>
+<line class="grid" x1="506.7" y1="60" x2="506.7" y2="150"/>
+<text class="lbl-s" x="506.7" y="168" text-anchor="middle">100</text>
+<line class="grid" x1="700.0" y1="60" x2="700.0" y2="150"/>
+<text class="lbl-s" x="700.0" y="168" text-anchor="middle">1000</text>
+<line class="axis" x1="120" y1="150" x2="700" y2="150"/>
+<text class="lbl-s" x="700" y="168" text-anchor="end">mg per kg body weight per day (log scale)</text>
+<path d="M279.3 72 L279.3 60 L675.8 60 L675.8 72" fill="none" stroke="var(--axis)" stroke-width="1.5"/>
+<text class="val" x="477.6" y="50" text-anchor="middle">about 112× margin</text>
+<line x1="279.3" y1="106" x2="279.3" y2="150" stroke="var(--s2)" stroke-width="2"/>
+<circle cx="279.3" cy="106" r="7" fill="var(--s2)" stroke="var(--card)" stroke-width="2" tabindex="0" data-tip="<b>Eaten: 6.67 mg/kg/day</b><br>90th-percentile intake<br>25 g burger/day at 0.8%, 60 kg person"/>
+<line x1="289.2" y1="106" x2="289.2" y2="150" stroke="var(--s1)" stroke-width="2"/>
+<circle cx="289.2" cy="106" r="7" fill="var(--s1)" stroke="var(--card)" stroke-width="2" tabindex="0" data-tip="<b>Allowed: 7.5 mg/kg/day</b><br>ADI = NOAEL ÷ 100<br>the safety factor regulators apply"/>
+<line x1="675.8" y1="106" x2="675.8" y2="150" stroke="var(--s3)" stroke-width="2"/>
+<circle cx="675.8" cy="106" r="7" fill="var(--s3)" stroke="var(--card)" stroke-width="2" tabindex="0" data-tip="<b>No effect in rats: 750 mg/kg/day</b><br>NOAEL, 28-day study<br>highest dose with no adverse effect"/>
+<path class="note-l" d="M279.3 99 L245.3 86"/>
+<text class="val" x="241.3" y="84" text-anchor="end">6.67</text>
+<text class="lbl-s" x="241.3" y="98" text-anchor="end">Eaten · 90th pct</text>
+<path class="note-l" d="M289.2 113 L319.2 196"/>
+<text class="val" x="323.2" y="194">7.5</text>
+<text class="lbl-s" x="323.2" y="208">Allowed · NOAEL ÷ 100</text>
+<text class="val" x="675.8" y="88" text-anchor="middle">750</text>
+<text class="lbl-s" x="675.8" y="102" text-anchor="middle">No effect in rats</text>
+</svg>
+</div>
+<figcaption>The gap between what people eat and what harmed no rats is about 112-fold. Note how close the two left-hand marks sit: the allowed intake is only slightly above the estimated one, because the safety factor of 100 is applied to the rat dose first. <b>Hover each mark</b> for its definition.</figcaption>
+<details class="fig-table"><summary>Show the numbers</summary><div class="tbl-wrap"><table><thead><tr><th>Quantity</th><th>Value</th><th>Where it comes from</th></tr></thead><tbody><tr><td>Estimated intake, 90th percentile</td><td class="n">6.67 mg/kg/day</td><td>25 g burger per day at 0.8%, doubled, over 60 kg</td></tr><tr><td>Acceptable daily intake</td><td class="n">7.5 mg/kg/day</td><td>NOAEL ÷ 100</td></tr><tr><td>No-adverse-effect level, rats</td><td class="n">750 mg/kg/day</td><td>28-day dietary study, top dose</td></tr></tbody></table></div></details>
+</figure>
   <h3 style="margin-top:48px">What the dossier says about the organism</h3>
   <div class="grid g2" style="margin-top:16px">
     <div class="card"><h4>Strain</h4><p class="small muted">Host strain from a known safe lineage. Eight of the yeast's own heme-pathway genes boosted, plus 16 copies of the soybean gene. Whole genome sequenced; stable for 150–200 generations without selection; no antibiotic-resistance genes.</p></div>
@@ -146,5 +271,6 @@
 </div></section>
 
 <footer><div class="wrap">ReLeaf · iGEM 2026 · Case 2 of 2 · <a href="template.html">Next: Bioreactor Report ›</a></div></footer>
+<script src="assets/viz.js"></script>
 </body>
 </html>

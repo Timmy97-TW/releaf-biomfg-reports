@@ -7,6 +7,7 @@
 <meta name="description" content="Type the ReLeaf Bioreactor System specs and metrics, saved on your own computer, and export a formatted biomanufacturing report as PDF.">
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/viz.css">
 <link rel="stylesheet" href="assets/report.css">
 </head>
 <body>
@@ -26,6 +27,64 @@
   <h1>ReLeaf Bioreactor System.</h1>
   <p class="lede">Specs and metrics for the Biomanufacturing page, in one place. Everything you type stays in this browser on this computer. Export PDF produces the formatted report.</p>
 </div></header>
+
+<div class="wrap" style="padding-bottom:8px">
+<figure class="fig viz">
+<div class="frame">
+<p class="fig-title">What this form is describing</p>
+<p class="fig-sub">The loop, and which section of the report each measurement point fills.</p>
+<svg class="chart" viewBox="0 0 760 344" role="img" aria-labelledby="f8t">
+<title id="f8t">Schematic of the ReLeaf bioreactor loop, labelled with which report section each measurement feeds.</title>
+<rect class="box" x="40" y="96" width="120" height="96" rx="12"/>
+<text class="box-t" x="100" y="130" text-anchor="middle">Reservoir</text>
+<text class="box-s" x="100" y="148" text-anchor="middle">culture, lumen loop</text>
+<text class="box-s" x="100" y="164" text-anchor="middle">loop volume</text>
+<circle class="box" cx="246" cy="144" r="34"/>
+<text class="box-t" x="246" y="142" text-anchor="middle">Pump</text>
+<text class="box-s" x="246" y="158" text-anchor="middle">230 mL/min</text>
+<rect class="box" x="360" y="100" width="210" height="88" rx="14"/>
+<text class="box-t" x="465" y="124" text-anchor="middle">Hollow-fibre module</text>
+<text class="box-s" x="465" y="141" text-anchor="middle">8 fibres · 0.2 µm · 150 cm²</text>
+<line x1="372" y1="155" x2="558" y2="155" stroke="var(--s1)" stroke-width="1.5" opacity=".55"/>
+<line x1="372" y1="163" x2="558" y2="163" stroke="var(--s1)" stroke-width="1.5" opacity=".55"/>
+<line x1="372" y1="171" x2="558" y2="171" stroke="var(--s1)" stroke-width="1.5" opacity=".55"/>
+<line x1="372" y1="179" x2="558" y2="179" stroke="var(--s1)" stroke-width="1.5" opacity=".55"/>
+<text class="box-s" x="465" y="202" text-anchor="middle">lumen inside the fibres · shell outside them</text>
+<rect class="box" x="628" y="108" width="104" height="72" rx="12"/>
+<text class="box-t" x="680" y="134" text-anchor="middle">Shell side</text>
+<text class="box-s" x="680" y="151" text-anchor="middle">permeate flow</text>
+<text class="box-s" x="680" y="167" text-anchor="middle">shell volume</text>
+<path class="flow" d="M160 144 L208 144"/><path d="M207 140 l6 4 -6 4z" fill="var(--axis)"/>
+<path class="flow" d="M280 144 L354 144"/><path d="M353 140 l6 4 -6 4z" fill="var(--axis)"/>
+<path class="flow" d="M570 144 L622 144"/><path d="M621 140 l6 4 -6 4z" fill="var(--axis)"/>
+<path class="flow" d="M465 188 L465 232 L100 232 L100 192" stroke-dasharray="5 4"/>
+<path d="M96 193 l4 6 4 -6z" fill="var(--axis)"/>
+<text class="box-s" x="286" y="248" text-anchor="middle">retentate returns to the reservoir</text>
+<path class="note-l" d="M100 96 L100 62"/>
+<circle cx="100" cy="96" r="4" fill="var(--s1)"/>
+<text class="box-t" x="100" y="56" text-anchor="middle">OD₆₀₀ sample</text>
+<text class="box-s" x="100" y="42" text-anchor="middle" fill="var(--s1)">§3 Performance</text>
+<path class="note-l" d="M246 110 L246 62"/>
+<circle cx="246" cy="110" r="4" fill="var(--s1)"/>
+<text class="box-t" x="246" y="56" text-anchor="middle">cross-flow setting</text>
+<text class="box-s" x="246" y="42" text-anchor="middle" fill="var(--s1)">§2 System</text>
+<path class="note-l" d="M465 100 L465 42"/>
+<circle cx="465" cy="100" r="4" fill="var(--s2)"/>
+<text class="box-t" x="465" y="36" text-anchor="middle">transmembrane pressure</text>
+<text class="box-s" x="465" y="22" text-anchor="middle" fill="var(--s2)">§4 Recovery</text>
+<path class="note-l" d="M672 180 L600 258"/>
+<circle cx="672" cy="180" r="4" fill="var(--s2)"/>
+<text class="box-t" x="600" y="274" text-anchor="middle">shell sample → Western</text>
+<text class="box-s" x="600" y="289" text-anchor="middle" fill="var(--s2)">§4 Recovery and §5 Specification</text>
+<path class="note-l" d="M690 180 L712 294"/>
+<circle cx="690" cy="180" r="4" fill="var(--s3)"/>
+<text class="box-t" x="712" y="310" text-anchor="end">100 µL plated on LB</text>
+<text class="box-s" x="712" y="325" text-anchor="end" fill="var(--s3)">§6 Biosafety</text>
+<text class="lbl-s" x="40" y="26">Each measurement point is tagged with the section of this report it fills.</text>
+</svg>
+</div>
+<figcaption>Every number in this report comes from one of the marked points. If a point was not recorded during a run, the section it feeds says so rather than estimating. The loop and shell volumes and the permeate flow are the three numbers most often missing from a run record, which is why section 4 asks for them by name.</figcaption>
+</figure></div>
 
 <div class="toolbar"><div class="toolbar-in">
   <span class="save-state" id="saveState">Saved on this computer</span>
@@ -48,6 +107,7 @@
 
 <div id="report" aria-hidden="true"></div>
 
+<script src="assets/viz.js"></script>
 <script src="assets/report.js"></script>
 </body>
 </html>

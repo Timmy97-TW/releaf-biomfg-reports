@@ -81,10 +81,10 @@
         ]
       },
       fields: [
-        { id: 'dsp_qp', label: 'Permeate flow (Q_p)', ph: 'mL/min, or "unrecorded"' },
-        { id: 'dsp_vl', label: 'Lumen loop volume (V_L)', ph: 'mL' },
-        { id: 'dsp_vs', label: 'Shell volume (V_S)', ph: 'mL' },
-        { id: 'dsp_sigma', label: 'Sieving coefficient (σ)', ph: 'and why' },
+        { id: 'dsp_qp', label: 'Permeate flow', ph: 'mL/min, or "unrecorded"' },
+        { id: 'dsp_vl', label: 'Lumen loop volume', ph: 'mL' },
+        { id: 'dsp_vs', label: 'Shell volume', ph: 'mL' },
+        { id: 'dsp_sigma', label: 'Sieving coefficient', ph: 'and why' },
         { id: 'dsp_note', label: 'What the blot can and cannot say', type: 'textarea', w: 4,
           hint: 'The Western is semi-quantitative. Say what it supports: presence, apparent size, lumen against shell. Not g/L.' }
       ]
@@ -436,8 +436,8 @@
 
     h += '<section><h2><span class="n">4</span>Recovery and downstream</h2>';
     h += kv([
-      ['Permeate flow Q_p', or('dsp_qp')], ['Lumen loop volume V_L', or('dsp_vl')],
-      ['Shell volume V_S', or('dsp_vs')], ['Sieving coefficient σ', or('dsp_sigma')]
+      ['Permeate flow', or('dsp_qp')], ['Lumen loop volume', or('dsp_vl')],
+      ['Shell volume', or('dsp_vs')], ['Sieving coefficient', or('dsp_sigma')]
     ]);
     h += tableHtml('dsp', colsOf('dsp'), 'tier');
     h += '<h3>What the measurement supports</h3>' + para('dsp_note');
