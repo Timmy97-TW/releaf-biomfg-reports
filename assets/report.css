@@ -1,0 +1,99 @@
+/* ---- Builder UI ---- */
+.toolbar {
+  position: sticky; top: 48px; z-index: 40;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line-soft);
+}
+.toolbar-in { max-width: 980px; margin: 0 auto; padding: 10px 22px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.tb-actions { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+.toolbar .btn { font-size: 14px; padding: 7px 14px; }
+.btn.danger { color: var(--red); }
+.save-state { font-size: 12px; color: var(--text-3); }
+.save-state.flash { color: var(--green); }
+@media (max-width: 640px) { .toolbar-in { padding: 8px 16px; } .save-state { width: 100%; } }
+
+.form-wrap { max-width: 980px; margin: 0 auto; padding: 40px 22px 80px; }
+@media (max-width: 640px) { .form-wrap { padding: 24px 16px 60px; } }
+
+fieldset.sec { border: 0; margin: 0 0 20px; padding: 28px; background: var(--bg-alt); border-radius: var(--radius); }
+fieldset.sec > legend { padding: 0; margin-bottom: 4px; font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+.sec-note { color: var(--text-2); font-size: 15px; margin: 0 0 22px; max-width: 640px; }
+.sec-num { font-size: 13px; font-weight: 600; color: var(--text-3); display: block; }
+
+.row { display: grid; gap: 16px; margin-bottom: 16px; }
+.row.c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.row.c3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.row.c4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 720px) { .row.c3, .row.c4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .row.c2, .row.c3, .row.c4 { grid-template-columns: 1fr; } }
+
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field label { font-size: 13px; font-weight: 600; color: var(--text-2); }
+.field .hint { font-size: 12px; color: var(--text-3); line-height: 1.35; }
+input[type=text], input[type=date], select, textarea {
+  font: inherit; font-size: 16px; color: var(--text);
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 10px 12px; width: 100%; min-width: 0;
+}
+textarea { resize: vertical; min-height: 92px; line-height: 1.45; }
+select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--text-2) 50%), linear-gradient(135deg, var(--text-2) 50%, transparent 50%); background-position: calc(100% - 17px) 50%, calc(100% - 12px) 50%; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 34px; }
+input::placeholder, textarea::placeholder { color: var(--text-3); }
+
+.tbl-edit { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+.tbl-edit th { font-size: 11px; padding: 6px 8px; background: transparent; border: 0; }
+.tbl-edit td { padding: 4px; border: 0; }
+.tbl-edit input, .tbl-edit select { font-size: 14px; padding: 8px 10px; border-radius: 8px; }
+.tbl-scroll { overflow-x: auto; }
+.tbl-scroll .tbl-edit { min-width: 720px; }
+.btn-row { display: flex; gap: 8px; }
+.btn.tiny { font-size: 13px; padding: 6px 14px; }
+button.del { appearance: none; border: 0; background: transparent; color: var(--text-3); cursor: pointer; font-size: 18px; line-height: 1; padding: 6px 8px; border-radius: 8px; }
+button.del:hover { color: var(--red); background: var(--card); }
+
+/* ---- Printed report ---- */
+#report { display: none; }
+@media print {
+  #app { display: none !important; }
+  #report { display: block !important; }
+  @page { size: A4; margin: 16mm 15mm 18mm; }
+}
+#report.preview { display: block; }
+
+.rpt ol, .rpt ul { margin: 4px 0 8px; }
+.rpt { font-family: var(--font); color: #1d1d1f; background: #fff; font-size: 10.5pt; line-height: 1.45; letter-spacing: 0; }
+.rpt a { color: #1d1d1f; text-decoration: none; }
+.rpt-head { display: flex; align-items: flex-start; gap: 14px; border-bottom: 2px solid #1d1d1f; padding-bottom: 12px; margin-bottom: 20px; }
+.rpt-head img { width: 44px; height: 44px; }
+.rpt-head .t { flex: 1; }
+.rpt-head h1 { font-size: 19pt; margin: 0 0 2px; line-height: 1.15; letter-spacing: -0.01em; color: #1d1d1f; }
+.rpt-head .st { font-size: 9.5pt; color: #555; margin: 0; }
+.rpt-head .meta { text-align: right; font-size: 8.5pt; color: #555; line-height: 1.5; white-space: nowrap; }
+
+.rpt h2 { font-size: 12.5pt; margin: 20px 0 6px; padding-bottom: 4px; border-bottom: 1px solid #c9c9cf; color: #1d1d1f; page-break-after: avoid; }
+.rpt h2 .n { color: #86868b; margin-right: 8px; font-weight: 600; }
+.rpt h3 { font-size: 10.5pt; margin: 12px 0 4px; color: #1d1d1f; page-break-after: avoid; }
+.rpt p { margin: 0 0 8px; }
+.rpt .lead { font-size: 10.5pt; }
+.rpt .empty { color: #9a9aa0; font-style: italic; }
+
+.rpt table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 6px 0 10px; page-break-inside: auto; }
+.rpt th, .rpt td { border: 1px solid #d2d2d7; padding: 5px 7px; text-align: left; vertical-align: top; color: #1d1d1f; }
+.rpt th { background: #f1f1f4; font-size: 8pt; text-transform: uppercase; letter-spacing: .04em; color: #555; }
+.rpt tr { page-break-inside: avoid; }
+
+.rpt .kv { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px 20px; font-size: 9.5pt; }
+.rpt .kv div { display: flex; gap: 8px; border-bottom: 1px dotted #d8d8de; padding: 3px 0; }
+.rpt .kv b { font-weight: 600; min-width: 46%; color: #555; }
+.rpt .pill { display: inline-block; font-size: 7.5pt; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 1px 6px; border-radius: 3px; border: 1px solid #c9c9cf; color: #555; }
+.rpt .pill.measured { border-color: #1d8a4e; color: #1d8a4e; }
+.rpt .pill.derived { border-color: #0066cc; color: #0066cc; }
+.rpt .pill.model { border-color: #b25000; color: #b25000; }
+.rpt .pill.lit { border-color: #6e6e73; color: #6e6e73; }
+.rpt .pill.none { border-color: #c4231c; color: #c4231c; }
+.rpt .note { font-size: 8.5pt; color: #6e6e73; margin: 4px 0 0; }
+.rpt .gapbox { border: 1px solid #d2d2d7; border-left: 3px solid #b25000; padding: 8px 12px; margin: 8px 0; font-size: 9.5pt; }
+.rpt .sign { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; font-size: 9pt; color: #555; page-break-inside: avoid; }
+.rpt .sign div { border-top: 1px solid #1d1d1f; padding-top: 5px; }
+.rpt .foot { margin-top: 22px; border-top: 1px solid #d2d2d7; padding-top: 8px; font-size: 8pt; color: #86868b; }
+.rpt section { padding: 0; page-break-inside: avoid; }

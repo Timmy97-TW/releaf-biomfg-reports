@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bioreactor Report Builder</title>
+<meta name="description" content="Type the ReLeaf Bioreactor System specs and metrics, saved on your own computer, and export a formatted biomanufacturing report as PDF.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+<div id="app">
+<nav class="gnav"><div class="gnav-in">
+  <a class="brand" href="index.html"><img src="assets/logo.png" alt=""><span>ReLeaf</span></a>
+  <div class="gnav-links">
+    <a href="index.html">Overview</a>
+    <a href="case-artemisinin.html">Case 1 · Artemisinin</a>
+    <a href="case-leghemoglobin.html">Case 2 · Leghemoglobin</a>
+    <a href="template.html" aria-current="page">Bioreactor Report</a>
+  </div>
+</div></nav>
+
+<header class="hero" style="padding-bottom:40px"><div class="wrap">
+  <p class="eyebrow">Template</p>
+  <h1>ReLeaf Bioreactor System.</h1>
+  <p class="lede">Specs and metrics for the Biomanufacturing page, in one place. Everything you type stays in this browser on this computer. Export PDF produces the formatted report.</p>
+</div></header>
+
+<div class="toolbar"><div class="toolbar-in">
+  <span class="save-state" id="saveState">Saved on this computer</span>
+  <div class="tb-actions">
+    <button class="btn ghost" id="btnKnown" type="button">Fill known specs</button>
+    <button class="btn ghost" id="btnExportJson" type="button">Export .json</button>
+    <label class="btn ghost" for="importFile">Import .json</label>
+    <input type="file" id="importFile" accept="application/json,.json" hidden>
+    <button class="btn ghost danger" id="btnClear" type="button">Clear</button>
+    <button class="btn" id="btnPdf" type="button">Export PDF</button>
+  </div>
+</div></div>
+
+<main class="form-wrap" id="form"></main>
+
+<footer><div class="wrap">
+  "Fill known specs" only fills empty boxes, using the locked hardware spec and the Level-1 modelling handoff (2 Sep 2026). Check every filled value before export. The PDF comes from your browser's print dialog: choose "Save as PDF" as the destination.
+</div></footer>
+</div>
+
+<div id="report" aria-hidden="true"></div>
+
+<script src="assets/report.js"></script>
+</body>
+</html>
