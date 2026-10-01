@@ -87,6 +87,10 @@
 </figure></div>
 
 <div class="toolbar"><div class="toolbar-in">
+  <div class="prog" title="How much of the form is filled in">
+    <div class="bar"><i id="progBar" style="width:0%"></i></div>
+    <span class="pct" id="progPct">0%</span>
+  </div>
   <span class="save-state" id="saveState">Saved on this computer</span>
   <div class="tb-actions">
     <button class="btn ghost" id="btnKnown" type="button">Fill known specs</button>
@@ -94,15 +98,31 @@
     <label class="btn ghost" for="importFile">Import .json</label>
     <input type="file" id="importFile" accept="application/json,.json" hidden>
     <button class="btn ghost danger" id="btnClear" type="button">Clear</button>
+    <button class="btn secondary" id="btnPreview" type="button">Preview</button>
     <button class="btn" id="btnPdf" type="button">Export PDF</button>
   </div>
 </div></div>
 
-<main class="form-wrap" id="form"></main>
+<div class="builder">
+  <nav class="rail" id="rail" aria-label="Report sections"></nav>
+  <main id="form"></main>
+</div>
 
 <footer><div class="wrap">
-  "Fill known specs" only fills empty boxes, using the locked hardware spec and the Level-1 modelling handoff (2 Sep 2026). Check every filled value before export. The PDF comes from your browser's print dialog: choose "Save as PDF" as the destination.
+  "Fill known specs" only fills empty boxes, from the locked hardware spec and the Level-1 modelling handoff of 2 September 2026. Check every value it writes. Export PDF opens your browser's print dialog: choose "Save as PDF" as the destination, and leave "Headers and footers" ticked so the pages carry the document title and a page number. Cmd or Ctrl + S exports the .json.
 </div></footer>
+</div>
+
+<div id="previewWrap" role="dialog" aria-label="Report preview">
+  <div class="pv-bar">
+    <span class="t">Report preview</span>
+    <span class="miss" id="pvMiss"></span>
+    <span class="sp">
+      <button class="btn ghost" id="pvClose" type="button">Back to editing</button>
+      <button class="btn" id="pvPdf" type="button">Export PDF</button>
+    </span>
+  </div>
+  <div class="pv-page" id="pvPage"></div>
 </div>
 
 <div id="report" aria-hidden="true"></div>
